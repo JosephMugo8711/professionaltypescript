@@ -92,3 +92,11 @@ console.log(foo);
 function error(message) {
     throw new Error(message);
 }
+error("I am the best");
+let myValue = null;
+console.log(myValue);
+let myValue2 = null;
+myValue2 = "Evanso mkuu";
+console.log(myValue);
+myValue2 = null;
+console.log(myValue);

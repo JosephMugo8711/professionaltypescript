@@ -39,3 +39,5 @@ declare function sayHello(): void;
 declare let unusable: void;
 declare let foo: never;
 declare function error(message: string): never;
+declare let myValue: string;
+declare let myValue2: string | null;
