@@ -12,10 +12,10 @@ type TestEnumType = SourceEnum | AdditionToSourceEnum;
 let TestEnum = Object.assign({}, SourceEnum, AdditionToSourceEnum);
 // also works fine the TypeScript 2 feature
 // let TestEnum = { ...SourceEnum, ...AdditionToSourceEnum };
-function check(test: TestEnumType) {
+function check2(test: TestEnumType) {
     return test === TestEnum.value2;
 }
 console.log(TestEnum.value1);
 console.log(TestEnum.value2 === <any>'value2');
-console.log(check(TestEnum.value2));
-console.log(check(TestEnum.value3));
+console.log(check2(TestEnum.value2));
+console.log(check2(TestEnum.value3));
