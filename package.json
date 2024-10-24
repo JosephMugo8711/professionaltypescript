@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "dev": "tsc && node dist/stringLiteralTypes.js"
+     "dev": "tsc && node dist/constructors.js"
   },
   "keywords": [],
   "author": "",
