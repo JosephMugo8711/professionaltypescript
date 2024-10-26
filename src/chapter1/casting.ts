@@ -16,6 +16,7 @@
 
 // define Myinterface with a commonMethod()
 interface  MyInterface {
+    age: number;
     commonMethod(): void;
 }
 
@@ -23,6 +24,7 @@ interface  MyInterface {
 // class implementing the interface
 // MyClass implements MyInterface but also has an additional method someSpecificMethod()
 class MyClass implements MyInterface {
+    age: number;
     commonMethod() {
         console.log("Called commonMethod from Myinterface");
     }
