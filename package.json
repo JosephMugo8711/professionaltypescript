@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "dev": "tsc && node dist/interfaces/useInterfaceToEnforceTypes.js"
+     "dev": "tsc && node dist/interfaces/genericClass.js"
   },
   "keywords": [],
   "author": "",
