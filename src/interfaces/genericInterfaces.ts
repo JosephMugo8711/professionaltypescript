@@ -41,8 +41,31 @@ const s = new State<IStatus<number>>();
 // The 'code' property is expected to be a number, so:
 
 s.emit({ code: 200}); // works
-s.emit({ code: 404}); // works
+//s.emit({ code: '500' }); // type error
 
 s.getAll().forEach(event => console.log(event.code))
+
+// Here our state class is typed as IStatus<number>
+
+type Code = {
+    message: string;
+    status: number;
+}
+
+const s2 = new State<IStatus<Code>>();
+
+
+// we are able to emit code as the type Code
+s2.emit({ code: { message: 'OK', status: 200}});
+
+s2.getAll().map(event => event.code).forEach(event => {
+    console.log(event.status);
+    console.log(event.message);
+})
+
+// Our State class is typed as IStatus<Code>. In this way, we are able to pass more complex type to our emit method
+// As you can see, generic interfaces can be a very useful tool for statically typed code 
+
+
 
 
