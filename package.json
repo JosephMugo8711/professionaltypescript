@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "dev": "tsc && node dist/interfaces/genericClass.js"
+    "dev": "tsc && node dist/Typescriptbasicexample/basicClassInheritance.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.17.13",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
