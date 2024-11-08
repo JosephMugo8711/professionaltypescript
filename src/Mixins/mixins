@@ -1,0 +1,46 @@
+// parameter                                     description
+
+// derivedCtor                         The class that you want to use as the compostion class
+// baseCtor                            An array of classes to be added to the composition class
+
+
+// To create mixins, simply declare lightweight classes that can be used as "behaviours".
+
+class Flies {
+    fly(){
+        alert('Is it a bird? Is it a plane?')
+    }
+}
+
+class Climbs {
+    climb() {
+        alert('My spider-sense is tingling')
+    }
+}
+
+class Bulletproof {
+    deflect() {
+        alert("My wings are a shield of steel.")
+    }
+}
+
+// You can then apply these behaviours to a composition class:
+class BeetleGuy implements Climbs, Bulletproof {
+    climb: () => void;
+    deflect: () => void;
+}
+
+applyMixins (BeetleGuy, [Climbs, Bulletproof]);
+
+
+function applyMixins(derivedCtor: any, baseCtors: any[]){
+    baseCtors.forEach(baseCtor => {
+        Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+            if (name !== "constructor") {
+                derivedCtor.prototype[name] = baseCtor.prototype[name]
+            }
+
+       });
+    });
+}
+
