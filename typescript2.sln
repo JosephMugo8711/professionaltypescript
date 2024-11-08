@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7EC55022-A23B-4BE4-9C34-B0F4114E6B8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypeScriptProject", "src\integratingwithbuildtools\TypeScriptProject.csproj", "{41AE5F44-F58F-4739-8DDF-46C0A5F6B6B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "msbuild", "src\integratingwithbuildtools\msbuild.csproj", "{83110DD9-657F-481E-96E6-F78630AA22BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41AE5F44-F58F-4739-8DDF-46C0A5F6B6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41AE5F44-F58F-4739-8DDF-46C0A5F6B6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41AE5F44-F58F-4739-8DDF-46C0A5F6B6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41AE5F44-F58F-4739-8DDF-46C0A5F6B6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83110DD9-657F-481E-96E6-F78630AA22BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83110DD9-657F-481E-96E6-F78630AA22BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83110DD9-657F-481E-96E6-F78630AA22BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83110DD9-657F-481E-96E6-F78630AA22BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41AE5F44-F58F-4739-8DDF-46C0A5F6B6B6} = {7EC55022-A23B-4BE4-9C34-B0F4114E6B8E}
+		{83110DD9-657F-481E-96E6-F78630AA22BF} = {7EC55022-A23B-4BE4-9C34-B0F4114E6B8E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DB56A33-AE59-40FA-8543-55B5BD2AB6DD}
+	EndGlobalSection
+EndGlobal

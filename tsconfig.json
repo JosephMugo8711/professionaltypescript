@@ -1,20 +1,57 @@
 {
+
+  // https://www.typescriptlang.org/docs/handbook/compiler-options-in-msbuild.html
+
+  
   "compilerOptions": {
+    // Specifies the module system to use for code generation (CommonJS is used for Node.js projects).
     "module": "commonjs",
+
+    // Generates corresponding '.d.ts' declaration files alongside JavaScript files.
     "declaration": true,
+
+    // Removes comments from the emitted JavaScript files. Use this for production builds to reduce file size.
     "removeComments": true,
+
+    // Allows synthetic default imports when importing non-ESM modules (helps with compatibility).
     "allowSyntheticDefaultImports": true,
+
+    // Specifies the target JavaScript version for emitted code (ES2017).
     "target": "es2017",
+
+    // Disable source map generation. Set to 'true' if you want source maps for debugging.
     "sourceMap": false,
+
+    // Specifies the output directory for compiled files (all JavaScript will be saved here).
     "outDir": "./dist",
+
+    // Defines the base directory for resolving module imports. All imports will be relative to this.
     "baseUrl": "./",
+
+    // Enables incremental compilation, storing information for faster subsequent builds.
     "incremental": true,
+
+    // Specifies the file to store incremental build information.
     "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
+
+    // Tells TypeScript how to handle JSX. React is specified to support JSX code generation.
     "jsx": "react"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "test", "lib", "**/*spec.ts"]
+
+  // Specifies the files or directories to include in the compilation.
+  "include": [
+    "src/**/*"  // Includes all TypeScript files in the src directory
+  ],
+
+  // Specifies the files or directories to exclude from the compilation.
+  "exclude": [
+    "node_modules",  // Exclude external dependencies in the node_modules directory
+    "test",           // Exclude the test directory (if present)
+    "lib",            // Exclude any lib folder (if present)
+    "**/*spec.ts"     // Exclude all files that match the pattern of test files (*.spec.ts)
+  ]
 }
+
 
 // module.exports = {
 //   entry: "./src/index.ts",

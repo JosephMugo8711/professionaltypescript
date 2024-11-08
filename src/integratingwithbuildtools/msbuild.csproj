@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- This property group defines the basic setup for the .NET project -->
+  <PropertyGroup>
+    <!-- Target framework for the project, e.g., .NET 6.0 -->
+    <TargetFramework>net6.0</TargetFramework>
+    
+    <!-- Version of the TypeScript tools to be used (helps maintain consistency across machines) -->
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    
+    <!-- You can add more project-specific properties here (like output paths, assembly name, etc.) -->
+  </PropertyGroup>
+
+  <!-- Property group for 'Debug' configuration -->
+  <!-- Debug builds typically have source maps and no comment stripping to facilitate debugging -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>  <!-- Do not remove comments in Debug mode -->
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>  <!-- Enable sourcemaps for easier debugging -->
+    <!-- Add other debug-specific configurations here if needed -->
+  </PropertyGroup>
+
+  <!-- Property group for 'Release' configuration -->
+  <!-- Release builds strip comments and disable sourcemaps for optimized production output -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>  <!-- Remove comments in Release mode -->
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>  <!-- Disable sourcemaps in Release mode for performance -->
+    <!-- Add other release-specific configurations here if needed -->
+  </PropertyGroup>
+
+  <!-- Global settings for TypeScript configuration -->
+  <PropertyGroup>
+    <!-- Prevent emitting files if there are TypeScript errors -->
+    <TypeScriptNoEmitOnError>true</TypeScriptNoEmitOnError>
+    
+    <!-- Enable no implicit return types for functions in TypeScript -->
+    <TypeScriptNoImplicitReturns>true</TypeScriptNoImplicitReturns>
+    
+    <!-- Add custom TypeScript flags, such as 'noPropertyAccessFromIndexSignature' -->
+    <TypeScriptAdditionalFlags>$(TypeScriptAdditionalFlags) --noPropertyAccessFromIndexSignature</TypeScriptAdditionalFlags>
+    <!-- Add other global TypeScript configurations here -->
+  </PropertyGroup>
+
+  <!-- Item group to include additional TypeScript files, if necessary -->
+  <ItemGroup>
+    <!-- Ensure your tsconfig.json file is part of the project -->
+    <None Update="tsconfig.json" />
+  </ItemGroup>
+
+  <!-- Import TypeScript build targets -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" 
+          Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <!-- This imports the TypeScript build targets needed to compile TypeScript files in Visual Studio -->
+
+  <!-- Option to prevent TypeScript from compiling if using external tools like Gulp/Grunt -->
+  <PropertyGroup>
+    <TypeScriptCompileBlocked>false</TypeScriptCompileBlocked>
+    <!-- Set to true if you're using other tools for compiling, like Gulp or Grunt, to prevent MSBuild from handling compilation -->
+  </PropertyGroup>
+
+  <!-- Option to enable/disable incremental builds for TypeScript -->
+  <PropertyGroup>
+    <!-- Set to false to force TypeScript to be compiled on every MSBuild run -->
+    <TypeScriptEnableIncrementalMSBuild>false</TypeScriptEnableIncrementalMSBuild>
+    <!-- Set to true if you want incremental builds (only recompiling changed files) -->
+  </PropertyGroup>
+
+</Project>
