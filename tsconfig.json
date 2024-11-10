@@ -1,54 +1,75 @@
 {
-
-  // https://www.typescriptlang.org/docs/handbook/compiler-options-in-msbuild.html
-
-  
   "compilerOptions": {
-    // Specifies the module system to use for code generation (CommonJS is used for Node.js projects).
-    "module": "commonjs",
+    // Specifies the module system to use for code generation.
+    // 'amd' is compatible with RequireJS, which is typically used for client-side module loading.
+    "module": "amd",
 
-    // Generates corresponding '.d.ts' declaration files alongside JavaScript files.
+    // Alternatively, you can use 'commonjs' for Node.js projects or when using CommonJS module format.
+    // This allows for the module system to be compatible with the Node.js `require()` function.
+    // "module": "commonjs",
+
+    // Specifies the ECMAScript target version for the compiled JavaScript code.
+    // 'es5' ensures that the generated JavaScript is compatible with older browsers like Internet Explorer 11.
+    // For modern web apps, you might want to use "es6" or higher.
+    "target": "es5",
+
+    // Defines the root directory where TypeScript will look for source files.
+    // In this case, all TypeScript files are located under the "src" folder.
+    "rootDir": "./src",
+
+    // Specifies the output directory for the compiled JavaScript files.
+    // All compiled files will be output in the "view" directory.
+    "outDir": "./view",
+
+    // This flag generates '.d.ts' declaration files which are useful for defining types in modules.
+    // These files can be used by other TypeScript files or JavaScript consumers for type checking.
     "declaration": true,
 
-    // Removes comments from the emitted JavaScript files. Use this for production builds to reduce file size.
+    // Removes comments from the final compiled JavaScript files, which is often preferred for production builds.
+    // This reduces the size of the output files and removes non-essential information.
     "removeComments": true,
 
-    // Allows synthetic default imports when importing non-ESM modules (helps with compatibility).
+    // Allows default imports from non-ESM (ECMAScript Module) modules, 
+    // enabling compatibility with older CommonJS-style modules.
     "allowSyntheticDefaultImports": true,
 
-    // Specifies the target JavaScript version for emitted code (ES2017).
-    "target": "es2017",
-
-    // Disable source map generation. Set to 'true' if you want source maps for debugging.
-    "sourceMap": false,
-
-    // Specifies the output directory for compiled files (all JavaScript will be saved here).
-    "outDir": "./dist",
-
-    // Defines the base directory for resolving module imports. All imports will be relative to this.
+    // The base URL for module resolution. This makes it easier to import files in a way that is consistent 
+    // across the project, avoiding the need for relative paths like '../../../'.
     "baseUrl": "./",
 
-    // Enables incremental compilation, storing information for faster subsequent builds.
+    // Enables incremental compilation for faster subsequent builds.
+    // When enabled, TypeScript will only recompile files that have changed, speeding up the build process.
     "incremental": true,
 
-    // Specifies the file to store incremental build information.
-    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
+    // Path where TypeScript stores the incremental build information for faster builds.
+    // This file stores metadata on the compilation process and is used to track changes in the project.
+    "tsBuildInfoFile": "./view/tsconfig.tsbuildinfo",
 
-    // Tells TypeScript how to handle JSX. React is specified to support JSX code generation.
-    "jsx": "react"
+    // Sets the JSX handling. In this case, we use "react" for React projects, which tells TypeScript 
+    // to parse JSX syntax and convert it into React.createElement calls in the compiled JavaScript.
+    "jsx": "react",
+
+    // Enable source map generation. Source maps map compiled JavaScript back to TypeScript for debugging.
+    "sourceMap": true,
+
+    // Ensures that every variable must have an explicit type or be inferred by TypeScript.
+    // If the compiler encounters an untyped variable, it will throw an error, reducing runtime errors.
+    "noImplicitAny": true
   },
-
-  // Specifies the files or directories to include in the compilation.
+  
+  // This section specifies which files to include in the compilation process.
+  // All files under the "src" directory (and subdirectories) will be compiled.
   "include": [
-    "src/**/*"  // Includes all TypeScript files in the src directory
+    "src/**/*"  // Include all TypeScript files within the "src" directory.
   ],
 
-  // Specifies the files or directories to exclude from the compilation.
+  // This section specifies which files and directories to exclude from the compilation process.
+  // Excluding certain directories or files ensures that unnecessary files are not processed.
   "exclude": [
-    "node_modules",  // Exclude external dependencies in the node_modules directory
-    "test",           // Exclude the test directory (if present)
-    "lib",            // Exclude any lib folder (if present)
-    "**/*spec.ts"     // Exclude all files that match the pattern of test files (*.spec.ts)
+    "node_modules",  // Exclude external dependencies in the "node_modules" folder to avoid compilation overhead.
+    "test",           // Exclude the test directory if it's not part of the main project code.
+    "lib",            // Exclude the "lib" directory, if it contains files unrelated to the main build.
+    "**/*spec.ts"     // Exclude files ending with '.spec.ts', typically used for unit tests.
   ]
 }
 

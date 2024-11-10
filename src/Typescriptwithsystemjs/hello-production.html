@@ -1,0 +1,41 @@
+<!-- 
+
+Use it in production
+Just load hello.js with a script tag before ﬁrst use
+
+  -->
+
+
+  <!doctype html>
+  <html lang="en">
+  <head>
+      <!-- Page Title -->
+      <title>Hello World in TypeScript</title>
+  
+      <!-- Load SystemJS Library: Required for module loading -->
+      <script src="node_modules/systemjs/dist/system.src.js"></script>
+  
+      <!-- Load SystemJS Configuration -->
+      <script src="config.js"></script>
+  
+      <!-- Compiled JavaScript Bundle -->
+      <script src="hello.js"></script>
+  
+      <script>
+          // Run this function after the page loads
+          window.addEventListener('load', function() {
+              // Import the TypeScript module hello.ts via SystemJS
+              System.import('./hello.ts').then(function(hello) {
+                  // Call the 'greeter' function and display the result in the body
+                  document.body.innerHTML = hello.greeter('World');
+              }).catch(function(error) {
+                  console.error("Error loading module:", error);
+              });
+          });
+      </script>
+  </head>
+  <body>
+      <!-- Dynamic Content will be added here by JavaScript -->
+  </body>
+  </html>
+  

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for the document -->
+    <meta charset="UTF-8">
+    
+    <!-- Set the viewport to ensure responsive scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Hello React</title>
+    
+    <!-- Load React library from CDN in development mode -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    
+    <!-- Load ReactDOM library from CDN in development mode to render React components into the DOM -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+    <!-- Mounting point for the React component; React will render content inside this div -->
+    <div id="mountNode"></div>
+    
+    <script>
+        // Define a React component using the older 'React.createClass' syntax
+        var HelloMessage = React.createClass({
+            // Render function that outputs JSX to the DOM
+            render: function() {
+                // Display a greeting message with the 'name' property
+                return <div>Hello {this.props.name}</div>;
+            }
+        });
+
+        // Render the HelloMessage component into the 'mountNode' div with 'John' as the name prop
+        ReactDOM.render(<HelloMessage name="John" />, document.getElementById("mountNode"));
+    </script>
+</body>
+</html>

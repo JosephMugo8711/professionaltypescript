@@ -1,0 +1,37 @@
+<!-- 
+  requirejs-example.html
+  
+  This HTML file demonstrates how to use RequireJS from a CDN 
+  to load an already compiled TypeScript file (in JavaScript format).
+  It includes RequireJS and initiates the loading of a specified module 
+  when the page loads.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RequireJS with TypeScript Example</title>
+</head>
+<body onload="__init();">
+  <!-- 
+    The 'onload' attribute is set to call the __init function 
+    once the page is fully loaded. This initializes the RequireJS module loading.
+  -->
+  
+  <!-- Include the RequireJS library from the official CDN -->
+  <script src="https://requirejs.org/docs/release/2.3.2/comments/require.js"></script>
+  
+  <script>
+    // The '__init' function is executed once the page loads.
+    // This function uses RequireJS to load the specified module
+    // which is the compiled TypeScript file 'index.js' within the 'view' directory.
+    function __init() {
+      // 'require' is a global function provided by RequireJS.
+      // We specify the path to the module we want to load here.
+      require(["view/index.js"]);
+    }
+  </script>
+</body>
+</html>
