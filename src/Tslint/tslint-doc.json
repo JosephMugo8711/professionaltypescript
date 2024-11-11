@@ -1,0 +1,21 @@
+{
+    "member-access": "Requires explicit visibility declarations for class members.",
+    "no-any": "Disallows usage of 'any' as a type declaration for stricter type-checking.",
+    "label-position": "Restricts label usage to sensible locations.",
+    "no-bitwise": "Disallows bitwise operators to prevent accidental usage.",
+    "no-eval": "Disallows 'eval()' function invocations for security and performance reasons.",
+    "no-null-keyword": "Disallows the use of the 'null' keyword literal, promoting 'undefined' or other patterns.",
+    "no-unsafe-finally": "Disallows control flow statements in finally blocks for clarity.",
+    "no-var-keyword": "Disallows the 'var' keyword; use 'let' or 'const' for variable declarations instead.",
+    "radix": "Requires a radix when calling parseInt, to prevent unexpected results.",
+    "triple-equals": "Requires strict equality checks (=== and !==) instead of loose ones (== and !=).",
+    "use-isnan": "Enforces using isNaN() to check for NaN, as direct comparisons to NaN are unreliable.",
+    "class-name": "Enforces PascalCase naming for class and interface names.",
+    "interface-name": "Requires interface names to be in PascalCase without the 'I' prefix.",
+    "no-angle-bracket-type-assertion": "Requires 'as Type' syntax for type assertions instead of angle brackets.",
+    "one-variable-per-declaration": "Disallows declaring multiple variables in the same statement.",
+    "quotemark": "Enforces double quotes for strings, with single quotes allowed only to avoid escaping.",
+    "semicolon": "Enforces semicolons at the end of statements.",
+    "variable-name": "Checks variable names for various errors, disallows TypeScript keywords as variable names, enforces camelCase or UPPER_CASE, and allows underscores at the beginning."
+  }
+  
