@@ -19,13 +19,13 @@ This project, "TypeScript Notes for Professionals," compiles comprehensive TypeS
 ### Content
 The book is structured to guide readers through essential TypeScript concepts, starting from the basics and progressing to more advanced topics. Here’s a glimpse of the chapters:
 
-Chapter 1: Introduction to TypeScript – Setup, syntax, and first program
-Chapter 2: Benefits of TypeScript – Safety, readability, and tooling
-Chapter 3-4: Core Types and Arrays – Types, tuples, enums, and array manipulation
-Chapter 5-7: Enums, Functions, and Classes – Working with enums, function types, and class inheritance
-Chapter 8-9: Decorators and Interfaces – Using decorators, extending interfaces, and enforcing types
-Chapter 10-12: Generics, Null Checks, and Type Guards – Leveraging generics, enabling strict null checks, and user-defined type guards
-Chapter 13-30: Advanced Topics – Modules, build tools, TypeScript with various frameworks (e.g., React, Angular), testing, configuration, and debugging
+*  Chapter 1: Introduction to TypeScript – Setup, syntax, and first program
+*  Chapter 2: Benefits of TypeScript – Safety, readability, and tooling
+*  Chapter 3-4: Core Types and Arrays – Types, tuples, enums, and array manipulation
+*  Chapter 5-7: Enums, Functions, and Classes – Working with enums, function types, and class inheritance
+*  Chapter 8-9: Decorators and Interfaces – Using decorators, extending interfaces, and enforcing types
+*  Chapter 10-12: Generics, Null Checks, and Type Guards – Leveraging generics, enabling strict null checks, and user-defined type guards
+*  Chapter 13-30: Advanced Topics – Modules, build tools, TypeScript with various frameworks (e.g., React, Angular), testing, configuration, and debugging
 
 Each chapter includes practical examples, explanations, and best practices to deepen your understanding of TypeScript.
 
